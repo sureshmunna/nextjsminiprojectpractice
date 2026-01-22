@@ -22,6 +22,9 @@ export async function getCurrectUserRole(){
     const {data :{user},}= await supabase.auth.getUser();
     if(!user)return null;
 
-    const {data}= await supabase.from("profiles").select("role").eq("id",user.id).single();
-    return data?.role
+    const {data,error}= await supabase.from("profiles").select("*").eq("id",user.id).single();
+    if(error){
+        return null;
+    }
+    return data;
 }

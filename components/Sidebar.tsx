@@ -39,7 +39,7 @@ function SidebarItem({
     collapsed : boolean;
 }){
     return(
-        <Link href={href} className="flex items-center gap-3 py-2 rounded hover:bg-gray-700 dark:hover:bg-gray-800">
+        <Link href={href} className="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-700 dark:hover:bg-gray-800">
         {icon}
         {!collapsed && <span>{label}</span>}
     </Link>

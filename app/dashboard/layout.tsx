@@ -10,6 +10,6 @@ export default async function DashboardLayout({children}:{children:ReactNode}){
     //     redirect("/login");
     // }
     const role = await getCurrectUserRole();
-    return <ClientDashboardLayout role={role}>{children}</ClientDashboardLayout>
+    return <ClientDashboardLayout data={role}>{children}</ClientDashboardLayout>
 
 }
